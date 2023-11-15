@@ -2,11 +2,15 @@
 #define MONTY_H
 #include <stdio.h>
 #include <stdlib.h>
+#include <errno.h>
+#include <ctype.h>
+#include <stdbool.h>
+#include <unistd.h>
+#include <string.h>
+extern int line_number;
 
-extern int top;
-
-void pull(void);
-
+int push(char* n);
+Command *tokenize(char *buffer);
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -16,6 +20,12 @@ void pull(void);
  * Description: doubly linked list node structure
  * for stack, queues, LIFO, FIFO
  */
+
+typedef enum {
+        push,
+        pint,
+        pall,
+}cmdtype;
 typedef struct stack_s
 {
         int n;
@@ -37,6 +47,10 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+typedef struct Command {
+    char* data;
+    int arguments[2];
+} Command;
 
 
 #endif
