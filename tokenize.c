@@ -1,24 +1,3 @@
-<<<<<<< HEAD
-// #include "monty.h"
-
-
-char *tokenize(char *buffer)
-{
-    // char *token = strtok(buffer, " ");
-    
-   
-    // char cmdtok[100][100];
-    // int itr = 0;
-    // while(token != NULL)
-    // {
-    //     strcpy(cmdtok[itr],token);
-    //     token = strtok(NULL, " /t #");
-    //     itr++;
-    // }
-
-    // return cmdtok;
-}
-=======
 #include "monty.h"
   
 /**
@@ -59,4 +38,3 @@ void free_list(stack_t *head)
 		free(current);
 	}
 }
->>>>>>> 674459316991ba9aef56109ef5bb9ced6febd296

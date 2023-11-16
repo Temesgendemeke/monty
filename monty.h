@@ -32,9 +32,7 @@ typedef struct stack_s
         struct stack_s *next;
 } stack_t;
 
-typedef struct Stack {
-  Node *top;
-} Stack;
+
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -50,15 +48,8 @@ typedef struct instruction_s
 } instruction_t;
 
 
-typedef struct Command {
-    char* data;
-    int arguments[2];
-} Command;
 
-Stack *createStack();
-void push(Stack *stack, char* n);
-bool isEmpty(Stack *stack);
-#endif
+
 
 void check(char *opcode, stack_t **stack, unsigned int len, char **tokens);
 void token(char *line, char *tokens[]);
