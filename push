@@ -11,6 +11,7 @@ void push(stack *stack, char* n)
     perror("L<line_number>: usage: push integer\n");
     exit(EXIT_FAILURE);
    }
+<<<<<<< HEAD:push.c
    stack_t newNode = malloc(sizeof(stack_t));
    newNode->n = num;
 
@@ -20,3 +21,7 @@ void push(stack *stack, char* n)
    }
 
 }
+=======
+   
+}
+>>>>>>> 674459316991ba9aef56109ef5bb9ced6febd296:push
