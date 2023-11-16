@@ -1,8 +1,8 @@
-//#include "monty.h"
+#include "monty.h"
 
 
 
-int push(char* n)
+void push(stack *stack, char* n)
 {
    int num = atoi(n);
 
@@ -11,5 +11,12 @@ int push(char* n)
     perror("L<line_number>: usage: push integer\n");
     exit(EXIT_FAILURE);
    }
-   
+   stack_t newNode = malloc(sizeof(stack_t));
+   newNode->n = num;
+
+   if (Stack->top == NULL)
+   {
+    
+   }
+
 }

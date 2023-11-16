@@ -1,16 +1,19 @@
-#include "monty.h"
+// #include "monty.h"
 
 
-Command *tokenize(char *buffer)
+char *tokenize(char *buffer)
 {
-    char* token = strtok(buffer, " ");
-    int i = 0;
-    char *c;
-    while(token != NULL)
-    {
-        c[i] = *token;
-        token = strtok(NULL, " ");
-    } 
+    // char *token = strtok(buffer, " ");
+    
+   
+    // char cmdtok[100][100];
+    // int itr = 0;
+    // while(token != NULL)
+    // {
+    //     strcpy(cmdtok[itr],token);
+    //     token = strtok(NULL, " /t #");
+    //     itr++;
+    // }
 
-    return ;
+    // return cmdtok;
 }

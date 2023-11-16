@@ -9,8 +9,9 @@
 #include <string.h>
 extern int line_number;
 
-int push(char* n);
-Command *tokenize(char *buffer);
+
+
+// char *tokenize(char *buffer);
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -20,12 +21,6 @@ Command *tokenize(char *buffer);
  * Description: doubly linked list node structure
  * for stack, queues, LIFO, FIFO
  */
-
-typedef enum {
-        push,
-        pint,
-        pall,
-}cmdtype;
 typedef struct stack_s
 {
         int n;
@@ -33,6 +28,9 @@ typedef struct stack_s
         struct stack_s *next;
 } stack_t;
 
+typedef struct Stack {
+  Node *top;
+} Stack;
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -52,5 +50,7 @@ typedef struct Command {
     int arguments[2];
 } Command;
 
-
+Stack *createStack();
+void push(Stack *stack, char* n);
+bool isEmpty(Stack *stack);
 #endif
