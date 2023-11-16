@@ -6,11 +6,15 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include <unistd.h>
+#include <sys/types.h>
+#include <stddef.h>
 #include <string.h>
-extern int line_number;
+#include <fcntl.h>
 
-int push(char* n);
-Command *tokenize(char *buffer);
+#define max_tokens 10
+
+extern int len;
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -21,11 +25,6 @@ Command *tokenize(char *buffer);
  * for stack, queues, LIFO, FIFO
  */
 
-typedef enum {
-        push,
-        pint,
-        pall,
-}cmdtype;
 typedef struct stack_s
 {
         int n;
@@ -47,10 +46,11 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-typedef struct Command {
-    char* data;
-    int arguments[2];
-} Command;
-
+void check(char *opcode, stack_t **stack, unsigned int len, char **tokens);
+void token(char *line, char *tokens[]);
+char *_stdup(char *str);
+void push_h(stack_t **stack, unsigned int num);
+void free_list(stack_t *head);
+void pall_h(stack_t **stack, unsigned int num);
 
 #endif
