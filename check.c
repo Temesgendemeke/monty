@@ -14,18 +14,23 @@ void check(char *opcode, stack_t **stack, unsigned int len, char **tokens)
         int i;
 
 	instruction_t instructions[] = {
-		{"push", push_h}, {"pall", pall_h}, {NULL, NULL}
+		{"push", push_h}, {"pall", pall_h}, {"pint", pint_h}, {"swap", swap_h}, {"nop", nop_h}, {NULL, NULL}
 	};
-
-	for (i = 0; instructions[i].opcode != NULL; i++)
+	if (tokens[0] != NULL && *tokens[0] != '\0' && *tokens[0] != '#')
 	{
-		if (strcmp(opcode, instructions[i].opcode) == 0)
+		for (i = 0; instructions[i].opcode != NULL; i++)
 		{
-			instructions[i].f(stack, len);
-			return;
+			if (strcmp(opcode, instructions[i].opcode) == 0)
+			{
+				instructions[i].f(stack, len);
+				return;
+			}
+		}
+		if (instructions[i].opcode != NULL)
+		{
+			fprintf(stderr, "L%u: unknown instruction %s\n", len, tokens[0]);
+			free_list(*stack);
+			exit(EXIT_FAILURE);
 		}
 	}
-	fprintf(stderr, "L%u: unknown instruction %s\n", len, tokens[0]);
-	free_list(*stack);
-	exit(EXIT_FAILURE);
 }

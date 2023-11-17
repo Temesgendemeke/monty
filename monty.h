@@ -11,9 +11,12 @@
 #include <string.h>
 #include <fcntl.h>
 
-#define max_tokens 10
+#define max_tokens 100
+#define max_bytes 1024
 
 extern int len;
+extern char *tokens[3];
+char *tokens[3];
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -49,6 +52,10 @@ typedef struct instruction_s
 void check(char *opcode, stack_t **stack, unsigned int len, char **tokens);
 void token(char *line, char *tokens[]);
 char *_stdup(char *str);
+void pint_h(stack_t **stack, unsigned int len);
+void pop_h(stack_t **stack, unsigned int len);
+void swap_h(stack_t **stack, unsigned int len);
+void nop_h(stack_t **stack, unsigned int len);
 void push_h(stack_t **stack, unsigned int num);
 void free_list(stack_t *head);
 void pall_h(stack_t **stack, unsigned int num);

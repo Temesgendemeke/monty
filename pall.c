@@ -7,8 +7,11 @@
 void pall_h(stack_t **stack, unsigned int num)
 {
 	stack_t *current = (*stack);
-	
 	(void)num;
+
+	if ((*stack) == NULL || stack == NULL)
+		return;
+
 	while (current != NULL)
 	{
 		printf("%d\n", current->n);
