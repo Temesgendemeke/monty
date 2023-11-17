@@ -1,0 +1,27 @@
+#include "monty.h"
+
+
+
+void push(stack *stack, char* n)
+{
+   int num = atoi(n);
+
+   if (!isdigit(num))
+   {
+    perror("L<line_number>: usage: push integer\n");
+    exit(EXIT_FAILURE);
+   }
+<<<<<<< HEAD:push.c
+   stack_t newNode = malloc(sizeof(stack_t));
+   newNode->n = num;
+
+   if (Stack->top == NULL)
+   {
+    
+   }
+
+}
+=======
+   
+}
+>>>>>>> 674459316991ba9aef56109ef5bb9ced6febd296:push

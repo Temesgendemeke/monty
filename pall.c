@@ -1,4 +1,6 @@
 #include "monty.h"
+
+
 /**
  * pall_h - function that handles printing all values in the stack
  * @stack:  pointer to a pointer to the stack data structure.
@@ -42,4 +44,5 @@ void push_h(stack_t **stack, unsigned int num)
 		(*stack)->prev = new_node;
 	*stack = new_node;
 }
+
 

@@ -2,6 +2,8 @@
 
 int main(int argc, char *argv[])
 {
+
+
 	FILE *fptr;
 	stack_t *cmd = NULL;
 	int num;
@@ -49,3 +51,4 @@ int main(int argc, char *argv[])
 	fclose(fptr);
 	return 0;
 }
+
