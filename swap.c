@@ -20,9 +20,9 @@ void swap_h(stack_t **stack, unsigned int len)
         temp = (*stack)->next;
         (*stack)->next = temp->next;
         if (temp->next != NULL)
-		{
-                temp->next->prev = (*stack);
-        }
+	{
+		temp->next->prev = (*stack);
+	}
         (*stack)->prev = temp;
         temp->next = (*stack);
         temp->prev = NULL;

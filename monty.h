@@ -53,7 +53,10 @@ typedef struct instruction_s
 
 
 
-
+void _push(stack_t **stack, unsigned int num);
+void _sub(stack_t **stack, unsigned int line_number);
+void _add(stack_t **stack, unsigned int line_number);
+void _pstr(stack_t **stack, unsigned int line_number);
 void check(char *opcode, stack_t **stack, unsigned int len, char **tokens);
 void token(char *line, char *tokens[]);
 char *_stdup(char *str);
