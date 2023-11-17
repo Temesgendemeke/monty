@@ -14,7 +14,7 @@ void check(char *opcode, stack_t **stack, unsigned int len, char **tokens)
         int i;
 
 	instruction_t instructions[] = {
-		{"push", push_h}, {"pall", pall_h}, {"pint", pint_h}, {"swap", swap_h}, {"nop", nop_h}, {NULL, NULL}
+		{"push", push_h}, {"pall", pall_h}, {"pint", pint_h}, {"swap", swap_h}, {"nop", nop_h}, {"pop", pop_h}, {"push", _push}, {"add", _add}, {"sub", _sub}, {"pstr", _pstr}, {"mul", mul_h}, {NULL, NULL}
 	};
 	if (tokens[0] != NULL && *tokens[0] != '\0' && *tokens[0] != '#')
 	{
